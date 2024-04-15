@@ -224,3 +224,38 @@ console.log(heroesArr)
 for (let i = 0; i < heroesArr.length; i++) {
   console.log(heroesArr[i].revelarIdentidadSecreta("mundo"))
 }
+
+
+// propiedad adicional superPower
+// metodo adicional attack con superpoder
+
+// extends nos permite indicar que una clase es hija de otra clase
+// HEREDA todos los metodos y propiedades de la clase padre
+
+class SuperHero extends Hero {
+
+  constructor(name, identity, superPower) {
+    // si queremos agregar propiedades adicionales a la subclase, tenemos que crear el constructor con los parametros completos
+    super(name, identity) // decir que superHero recibe dos parametros y los usa en la plantilla padre Hero
+
+    this.superPower = superPower
+
+  }
+
+  
+  userSuperPower(target) {
+    console.log(target)
+    return `${this.name} esta usando el poder de ${this.superPower} contra ${target.name}`
+  }
+
+
+}
+
+
+const superHero1 = new SuperHero("Spiderman", "Peter Parker", "Lanzar Telarañas")
+console.log(superHero1)
+console.log(superHero1.userSuperPower( hero1 ))
+console.log(superHero1.userSuperPower( hero2 ))
+
+const superHero2 = new SuperHero("Wolverine", "Logan", "Atacar con garras")
+console.log(superHero2)
